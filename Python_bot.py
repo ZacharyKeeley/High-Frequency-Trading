@@ -2,8 +2,8 @@ import alpaca_trade_api as tradeapi
 import pandas as pd
 
 # Set your Alpaca API key and secret
-API_KEY = 'PKHCC2QISRBUITLGL7XS'
-API_SECRET = 'F1OhMua9qrDy69FNNwuBtEXu1nqVlBg6HkmUUnMG'
+API_KEY = '#'
+API_SECRET = '#'
 BASE_URL = 'https://paper-api.alpaca.markets'  # For paper trading, replace with 'https://api.alpaca.markets' for live trading
 
 # Initialize Alpaca API
