@@ -2,8 +2,8 @@ import alpaca_trade_api as tradeapi
 import pandas as pd
 
 # Set your Alpaca API key and secret
-API_KEY = 'api_key'
-API_SECRET = 'api_secret'
+API_KEY = 'PKHCC2QISRBUITLGL7XS'
+API_SECRET = 'F1OhMua9qrDy69FNNwuBtEXu1nqVlBg6HkmUUnMG'
 BASE_URL = 'https://paper-api.alpaca.markets'  # For paper trading, replace with 'https://api.alpaca.markets' for live trading
 
 # Initialize Alpaca API
@@ -37,6 +37,16 @@ def execute_trading_strategy(data):
         signal = -1  # Sell signal
     return signal
 
+# Function to place a market order
+def place_market_order(symbol, qty, side):
+    api.submit_order(
+        symbol=symbol,
+        qty=qty,
+        side=side,
+        type='market',
+        time_in_force='gtc'
+    )
+
 # Main function to run the trading bot
 def run_trading_bot():
     historical_data = get_historical_data(symbol, timeframe)
@@ -46,9 +56,11 @@ def run_trading_bot():
     # Implement your order execution logic based on the signal
     if signal == 1:
         # Execute buy order
+        place_market_order(symbol, 1, 'buy')
         print('Executing Buy Order')
     elif signal == -1:
         # Execute sell order
+        place_market_order(symbol, 1, 'sell')
         print('Executing Sell Order')
     else:
         # No action
