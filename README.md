@@ -1,1 +1,3 @@
-2/2/2024
+Run in terminal:
+
+Python3 Python_bot.py
