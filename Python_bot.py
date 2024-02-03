@@ -2,8 +2,8 @@ import alpaca_trade_api as tradeapi
 import pandas as pd
 
 # Set your Alpaca API key and secret
-API_KEY = 'your_api_key'
-API_SECRET = 'your_api_secret'
+API_KEY = 'api_key'
+API_SECRET = 'api_secret'
 BASE_URL = 'https://paper-api.alpaca.markets'  # For paper trading, replace with 'https://api.alpaca.markets' for live trading
 
 # Initialize Alpaca API
@@ -19,7 +19,7 @@ long_window = 100
 
 # Function to get historical data from Alpaca
 def get_historical_data(symbol, timeframe, limit=200):
-    historical_data = api.get_barset(symbol, timeframe, limit=limit).df[symbol]
+    historical_data = api.get_bars(symbol, timeframe, limit=limit)
     return historical_data
 
 # Function to calculate moving averages
