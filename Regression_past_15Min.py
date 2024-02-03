@@ -7,8 +7,8 @@ from sklearn.preprocessing import StandardScaler
 from datetime import timedelta
 
 # Set your Alpaca API key and secret
-API_KEY = 'your_api_key'
-API_SECRET = 'your_api_secret'
+API_KEY = '#'
+API_SECRET = '#'
 BASE_URL = 'https://paper-api.alpaca.markets'  # For paper trading, replace with 'https://api.alpaca.markets' for live trading
 
 # Initialize Alpaca API
